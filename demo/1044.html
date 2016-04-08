@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>常用的移动端轮播插件flexslider</title>
+
+
+<!-- 步骤1-->
+
+<style>
+/*css reset */
+body,p,div,ol,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,iframe,nav {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font: 14px Microsoft YaHei;
+    -webkit-text-size-adjust:100%;
+}
+a { 
+    text-decoration: none;
+}
+ol,ul {
+    list-style: none;
+}
+img { 
+    border: 0;
+}
+
+
+/* flexslider*/
+.flexslider {
+	position: relative;
+	height: 400px;
+	overflow: hidden;
+}
+.slides {
+	position: relative;
+	z-index: 1;
+}
+.slides li {
+	height: 400px;
+}
+.flex-control-nav {
+	position: absolute;
+	bottom: 10px;
+	z-index: 2;
+	width: 100%;
+	text-align: center;
+}
+.flex-control-nav li {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	margin: 0 5px;
+	*display: inline;
+	zoom: 1;
+}
+.flex-control-nav a {
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	line-height: 40px;
+	overflow: hidden;
+	background: url(http://ww3.sinaimg.cn/large/bea70753gw1f1oap5wfwij200q00d085.jpg) -13px 1px no-repeat;
+	cursor: pointer;
+}
+.flex-control-nav .flex-active {
+	background-position: 0 1px;
+}
+.flex-direction-nav {
+	position: absolute;
+	z-index: 3;
+	width: 100%;
+	top: 45%;
+}
+.flex-direction-nav li a {
+	display: none;
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+	cursor: pointer;
+	position: absolute;
+}
+.flex-direction-nav li a.flex-prev {
+	left: 40px;
+	background: url(http://ww2.sinaimg.cn/large/bea70753gw1f1oap8vm2ej201e02s0nj.jpg) 0 -50px no-repeat;
+}
+.flex-direction-nav li a.flex-next {
+	right: 40px;
+	background: url(http://ww2.sinaimg.cn/large/bea70753gw1f1oap8vm2ej201e02s0nj.jpg) 0 0 no-repeat;
+}
+.flexslider:hover ul li a {
+	display: block;
+	outline: 0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 步骤2 -->
+
+<div class="flexslider" ondragstart="return false;">
+	<ul class="slides">
+		<li>
+			<a href="javascript:;"><img src="http://ww3.sinaimg.cn/large/bea70753gw1f1oap6fxqjj21xg0b4n24.jpg" alt="" /></a>
+		</li>
+		<li>
+			<a href="javascript:;"><img src="http://ww4.sinaimg.cn/large/bea70753gw1f1oap6yx2vj21xg0b4dil.jpg" alt="" /></a>
+		</li>
+		<li>
+			<a href="javascript:;"><img src="http://ww3.sinaimg.cn/large/bea70753gw1f1oap7epykj21xg0b4q5l.jpg" alt="" /></a>
+		</li>
+		<li>
+			<a href="javascript:;"><img src="http://ww4.sinaimg.cn/large/bea70753gw1f1oap7xu30j21xg0b4tc1.jpg" alt="" /></a>
+		</li>
+		<li>
+			<a href="javascript:;"><img src="http://ww3.sinaimg.cn/large/bea70753gw1f1oap8ehzwj21xg0b4q5b.jpg" alt="" /></a>
+		</li>
+	</ul>
+</div>
+
+<!-- 步骤3 -->
+
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://cdn.bootcss.com/flexslider/2.6.0/jquery.flexslider.js"></script>
+
+<script>
+$(function () {
+	$('.flexslider').flexslider({
+        directionNav: false,         //是否显示左右控制按钮,false(不显示),true(显示)
+        controlNav: true,            //是否显示底部切换按钮,false(不显示)
+        pauseOnAction: false,        //手动切换后是否继续自动轮播,继续(false),停止(true),默认true
+        animation: "slide",           //淡入淡出(fade)或滑动(slide),默认fade
+        slideshowSpeed: 4000,        //自动轮播间隔时间(毫秒),默认5000
+        animationSpeed: 600,         //轮播效果播放时长,默认600
+        keyboardNav: true,           //键盘左右方向键控制图片滑动
+        direction: "horizontal",     //设置滑动方向:左右horizontal或者上下vertical,需设置animation: "slide",默认horizontal
+        randomize: false,            //是否随机幻灯片
+        animationLoop: true          //是否循环滚动
+	});
+});
+</script>
+
+</body>
+</html>
