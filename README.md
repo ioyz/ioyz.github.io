@@ -1,2 +1,2 @@
-# qq2020.github.com
+# qq2020.github.io
 gh-pages 
