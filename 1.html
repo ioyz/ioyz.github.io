@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>test</title>
+<style>
+/*css reset */
+body,p,div,ol,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,iframe,nav {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font: 14px Microsoft YaHei;
+} 
+a {
+    text-decoration: none; 
+} 
+ol,ul {
+    list-style: none;
+} 
+
+.wrapper {
+    width: 800px;
+    margin: 100px auto;
+} 
+.d1 {
+    width: 400px;
+    height: 100px;
+    background: #09d;
+    margin-top: 20px;
+}
+.i1 {
+    padding: 5px 10px;
+    margin: 30px 0;
+}
+</style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="d1"></div>
+        <input class="ipt1" type="text" value="20160608">
+    </div>
+        <input class="i1" type="button" value="点击">
+        <input class="beforeDayBtn" type="button" value="前一天">
+        <input class="afterDayBtn" type="button" value="后一天">
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+$(function () {
+
+            function theDate(cls,num) {
+              var txt = $(cls),
+                  dtx = txt.val(),
+                  subYear = dtx.substr(0, 4),
+                  subMon = dtx.substr(4, 2),
+                  subDay = dtx.substr(6, 2);
+
+                 var date = new Date();
+                  date.setFullYear(subYear);
+                  date.setMonth(subMon - 1);
+                  date.setDate(parseInt(subDay) +num);
+
+              var Y = date.getFullYear(),
+                  M = date.getMonth() + 1,
+                  D = date.getDate(),
+                  time = ( Y + '');
+              time += (M < 10 ? '0' + M : M);
+              time += (D < 10 ? '0' + D : D);
+
+              txt.val(time);
+            }
+
+            //点击前一天
+            $('.beforeDayBtn').click(function() {
+                theDate('.ipt1',-1);
+            });
+
+            //点击后一天
+            $('.afterDayBtn').click(function() {
+              theDate('.ipt1',1);
+            });
+
+});
+
+</script>
+</body>
+</html>
