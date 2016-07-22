@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>test-a</title>
+<style>
+/*css reset */
+body,p,div,ol,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,input,iframe,nav {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font: 14px Microsoft YaHei;
+    background: #000;
+} 
+a {
+    text-decoration: none; 
+} 
+ol,ul {
+    list-style: none;
+}
+html,body {
+    height: 100%;
+}
+.clearfix::before,.clearfix::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.d1 {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    animation: we 8s linear;
+}
+.d1 img {
+    width: 100%;
+    height: 100%;
+}
+@keyframes we {
+    0% {
+        transform: scale(0,0);
+    }
+    20% {
+        transform: scale(0,0);
+    }
+    70% {
+        transform: scale(.75,.75);
+    }
+    100% {
+        transform: scale(1,1);
+    }
+}
+</style>
+</head>
+
+<body>
+    <div class="d1">
+        <img src="http://ww4.sinaimg.cn/large/bea70753gw1eyfo5fzbisj21hc0u0anl.jpg" alt="">
+    </div>
+</body>
+</html>
